@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>Skin Type Based Product Recommendation</h2>
+
+<form action="/recommend" method="post">
+
+Select Your Skin Type
+
+<br><br>
+
+<select name="skin">
+
+<option value="Oily">Oily</option>
+<option value="Dry">Dry</option>
+<option value="Sensitive">Sensitive</option>
+<option value="Combination">Combination</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">Get Recommendation</button>
+
+</form>
+
+
+{% if products %}
+
+<h3>Recommended Products for {{skin_type}} Skin</h3>
+
+<ul>
+
+{% for p in products %}
+
+<li>{{p}}</li>
+
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+</body>
+
+</html>

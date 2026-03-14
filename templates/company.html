@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>Company Batch Review Analyzer</h2>
+
+<form action="/batch_predict" method="post" enctype="multipart/form-data">
+
+<input type="file" name="file">
+
+<br><br>
+
+<button type="submit">Analyze Reviews</button>
+
+</form>
+
+{% if results %}
+
+<table border="1" style="margin:auto">
+
+<tr>
+<th>Review</th>
+<th>Sentiment</th>
+</tr>
+
+{% for row in results %}
+
+<tr>
+<td>{{row[0]}}</td>
+<td>{{row[1]}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+</body>
+
+</html>

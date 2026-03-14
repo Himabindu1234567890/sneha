@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>Customer Review Analyzer</h2>
+
+<form action="/predict" method="post">
+
+<textarea name="review" rows="6" cols="50">{{review}}</textarea>
+
+<br><br>
+
+<button type="submit">Analyze Review</button>
+
+</form>
+
+{% if sentiment %}
+
+<h3>Sentiment: {{sentiment}}</h3>
+
+<h3>Confidence: {{confidence}}%</h3>
+
+<h2>{{rating}}</h2>
+
+{% endif %}
+
+</body>
+
+</html>
